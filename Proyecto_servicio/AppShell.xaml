@@ -3,12 +3,11 @@
     x:Class="Proyecto_servicio.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Proyecto_servicio"
+    xmlns:pages="Proyecto_servicio"
     Title="Proyecto_servicio">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!-- LoginPage registrado y colocado como primer ShellContent para que sea la página inicial -->
+    <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate pages:LoginPage}" />
 
+    <!-- Otros elementos del Shell pueden ir aquí -->
 </Shell>

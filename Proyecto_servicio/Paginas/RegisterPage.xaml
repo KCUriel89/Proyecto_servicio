@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_servicio.Paginas.RegisterPage"
+             Title="RegisterPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="15">
+
+            <Label Text="Crear cuenta 📝"
+                   FontSize="28"
+                   HorizontalOptions="Center"
+                   TextColor="#333" />
+
+            <!-- Campos de texto -->
+            <Entry Placeholder="Nombre"
+                   Text="{Binding Nombre}"
+                    />
+            <Entry Placeholder="Apellido paterno"
+                   Text="{Binding ApellidoPaterno}"
+                    />
+            <Entry Placeholder="Apellido materno"
+                   Text="{Binding ApellidoMaterno}"
+                    />
+            <DatePicker Date="{Binding FechaNacimiento}"
+            MaximumDate="{Binding FechaMaxima}" />
+
+
+            <Entry Placeholder="Correo electrónico"
+                   Text="{Binding Email}"
+                   Keyboard="Email"
+                    />
+            <Entry Placeholder="Usuario"
+                   Text="{Binding Username}"
+                    />
+            <Entry Placeholder="Contraseña"
+                   Text="{Binding Password}"
+                   IsPassword="True"
+                    />
+            <Entry Placeholder="Confirmar contraseña"
+                   Text="{Binding ConfirmPassword}"
+                   IsPassword="True"
+                    />
+
+            <!-- Botón para registrar huella -->
+            <Button Text="Registrar Huella"
+                    Command="{Binding RegisterFingerprintCommand}"
+                    BackgroundColor="#2D9CDB"
+                    TextColor="White" />
+
+            <!-- Mostrar token de huella generado -->
+            <Label Text="Token de huella registrado:"
+                   FontAttributes="Bold"
+                   IsVisible="{Binding FingerprintToken, TargetNullValue=False}" />
+            <Label Text="{Binding FingerprintToken}"
+                   TextColor="#555" />
+
+            <!-- Botón de registro -->
+            <Button Text="Registrarse"
+                    Command="{Binding RegisterCommand}"
+                    BackgroundColor="#2563EB"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="12"
+                    HeightRequest="50" />
+
+            <!-- Volver al login -->
+            <Button Text="Volver al inicio de sesión"
+                    Command="{Binding GoToLoginCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="#2563EB"
+                    FontAttributes="Bold" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

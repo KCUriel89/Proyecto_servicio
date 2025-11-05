@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net9.0-android;net9.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net9.0-tizen</TargetFrameworks> -->
@@ -39,7 +39,69 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<Platforms>AnyCPU;ARM32;ARM64</Platforms>
+		<AndroidSigningKeyStore>Proyecto_servicio.keystore</AndroidSigningKeyStore>
+		<AssemblyName>Proyecto_servicio</AssemblyName>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
+	  <AndroidKeyStore>True</AndroidKeyStore>
+	  <AndroidSigningStorePass>798127</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias>Tramites</AndroidSigningKeyAlias>
+	  <AndroidSigningKeyPass>2491</AndroidSigningKeyPass>
+	  <AndroidApkSignerAdditionalArguments />
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|ARM32'">
+	  <AndroidKeyStore>True</AndroidKeyStore>
+	  <AndroidSigningStorePass>798127</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias>Tramites</AndroidSigningKeyAlias>
+	  <AndroidSigningKeyPass>2491</AndroidSigningKeyPass>
+	  <AndroidApkSignerAdditionalArguments />
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|ARM64'">
+	  <AndroidKeyStore>True</AndroidKeyStore>
+	  <AndroidSigningStorePass>798127</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias>Tramites</AndroidSigningKeyAlias>
+	  <AndroidSigningKeyPass>2491</AndroidSigningKeyPass>
+	  <AndroidApkSignerAdditionalArguments />
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
+	  <AndroidKeyStore>True</AndroidKeyStore>
+	  <AndroidSigningStorePass>798127</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias>Tramites</AndroidSigningKeyAlias>
+	  <AndroidSigningKeyPass>2491</AndroidSigningKeyPass>
+	  <AndroidApkSignerAdditionalArguments />
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|ARM32'">
+	  <AndroidKeyStore>True</AndroidKeyStore>
+	  <AndroidSigningStorePass>798127</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias>Tramites</AndroidSigningKeyAlias>
+	  <AndroidSigningKeyPass>2491</AndroidSigningKeyPass>
+	  <AndroidApkSignerAdditionalArguments />
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|ARM64'">
+	  <AndroidKeyStore>True</AndroidKeyStore>
+	  <AndroidSigningStorePass>798127</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias>Tramites</AndroidSigningKeyAlias>
+	  <AndroidSigningKeyPass>2491</AndroidSigningKeyPass>
+	  <AndroidApkSignerAdditionalArguments />
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup>
+  <AndroidKeyStore>true</AndroidKeyStore>
+  <AndroidSigningKeyStore>C:\Users\Uriel\source\repos\Proyecto_servicio\Proyecto_servicio.keystore</AndroidSigningKeyStore>
+  <AndroidSigningKeyAlias>Tramites</AndroidSigningKeyAlias>
+  <AndroidSigningKeyPass>798127</AndroidSigningKeyPass>
+  <AndroidSigningStorePass>798127</AndroidSigningStorePass>
+</PropertyGroup>
 
 	<ItemGroup>
 		<!-- App Icon -->
@@ -60,8 +122,41 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.120" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.120" />
+		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.14.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="uikit" Version="2.25.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Paginas\AdminPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Paginas\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Paginas\RegisterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Paginas\PageCompraventa.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Paginas\PageINE.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Paginas\Page_Testamentos_suceciones.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Paginas\PaginaPrincipal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
