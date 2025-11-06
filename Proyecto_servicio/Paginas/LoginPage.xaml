@@ -1,12 +1,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Proyecto_servicio.Paginas.MainPage">
-
+             x:Class="Proyecto_servicio.Paginas.LoginPage"
+    Title="LoginPage">
     <VerticalStackLayout
-        Spacing="25"
-        Padding="30"
-        VerticalOptions="Center">
-
+       Padding="30" Spacing="15" >
+        <Label Text="Inicio de Sesión"
+       FontSize="28"
+       HorizontalOptions="Center" />
         <Entry Placeholder="Usuario"
        Text="{Binding Username}"
        FontSize="16"
@@ -16,11 +16,11 @@
        HeightRequest="45"
        
        />
-        <Label Text="Inicio de Sesión"
-               FontSize="28"
-               HorizontalOptions="Center" />
+        
 
-        <Entry x:Name="PasswordEntry"
+        <Entry 
+            Placeholder="contraseña"
+            x:Name="PasswordEntry"
             Text="{Binding Password}"
             IsPassword="True"
             FontSize="16"
@@ -36,11 +36,13 @@
         CornerRadius="12"
         HeightRequest="50" />
 
-
         <Button Text="Registrarse"
-                Clicked="OnRegisterClicked"
-                BackgroundColor="#2D9CDB"
-                TextColor="White" />
+ Command="{Binding GoToRegisterCommand}"
+ BackgroundColor="#2563EB"
+ TextColor="White"
+ FontSize="18"
+ CornerRadius="12"
+ HeightRequest="50" />
 
     </VerticalStackLayout>
 

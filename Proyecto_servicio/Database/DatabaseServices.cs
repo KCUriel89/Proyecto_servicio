@@ -1,6 +1,10 @@
 ﻿using SQLite;
-using Tablas.Models;
-namespace Database_prueba.DataBase
+using Proyecto_servicio.Models;
+using System;
+using System.IO;    
+using System.Threading.Tasks;
+
+namespace Proyecto_servicio.DataBase
 {
     public class DatabaseService
     {

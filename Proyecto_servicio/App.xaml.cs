@@ -1,5 +1,7 @@
-﻿using Microsoft.Maui;
+﻿// File: Proyecto_servicio/App.xaml.cs
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using System;
 
 namespace Proyecto_servicio
 {
@@ -9,15 +11,20 @@ namespace Proyecto_servicio
         {
             InitializeComponent();
 
-            // Set the Shell as the main page
-            MainPage = new AppShell();
-
-            // Ensure navigation runs after MainPage is set and on the UI thread
-            MainPage.Dispatcher.Dispatch(async () =>
+            try
             {
-                // Navigate to the LoginPage route (defined in AppShell.xaml)
-                await Shell.Current.GoToAsync("//LoginPage");
-            });
+                // Ensure the shell is created here so startup XAML errors are caught
+                MainPage = new AppShell();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Startup error: {ex}");
+                // Show simple error page so the app doesn't immediately crash
+                MainPage = new ContentPage
+                {
+                    Content = new Label { Text = "Startup error: " + ex.Message }
+                };
+            }
         }
     }
 }

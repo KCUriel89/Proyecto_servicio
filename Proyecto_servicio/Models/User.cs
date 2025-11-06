@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace Tablas.Models
+namespace Proyecto_servicio.Models
 {
     [Table("Users")]
     public class User
@@ -34,7 +34,6 @@ namespace Tablas.Models
         public string ApellidoMaterno { get; set; }
 
         public DateTime FechaNacimiento { get; set; }
-        [MaxLength(512)]
-        public string FingerprintToken { get; set; }
+        
     }
 }

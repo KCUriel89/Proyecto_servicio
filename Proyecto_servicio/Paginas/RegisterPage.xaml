@@ -41,19 +41,6 @@
                    IsPassword="True"
                     />
 
-            <!-- Botón para registrar huella -->
-            <Button Text="Registrar Huella"
-                    Command="{Binding RegisterFingerprintCommand}"
-                    BackgroundColor="#2D9CDB"
-                    TextColor="White" />
-
-            <!-- Mostrar token de huella generado -->
-            <Label Text="Token de huella registrado:"
-                   FontAttributes="Bold"
-                   IsVisible="{Binding FingerprintToken, TargetNullValue=False}" />
-            <Label Text="{Binding FingerprintToken}"
-                   TextColor="#555" />
-
             <!-- Botón de registro -->
             <Button Text="Registrarse"
                     Command="{Binding RegisterCommand}"
