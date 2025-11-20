@@ -2,61 +2,112 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto_servicio.Paginas.RegisterPage"
-             Title="RegisterPage">
-    <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="15">
+             Title=""
+             BackgroundColor="Black"
+             Shell.BackgroundColor="Black">
 
-            <Label Text="Crear cuenta 📝"
-                   FontSize="28"
-                   HorizontalOptions="Center"
-                   TextColor="#333" />
+    <Grid RowDefinitions=".3*, .7*">
+        <Image
+         Source="https://i.pinimg.com/736x/f0/4b/2a/f04b2a9c050bd85fe72a67a9b77941eb.jpg"
+         Aspect="AspectFill"
+         Margin="0,-50,-50,30"/>
 
-            <!-- Campos de texto -->
-            <Entry Placeholder="Nombre"
+        <Label
+         Text="crear cuenta"
+         FontSize="50"
+         VerticalOptions="Center"
+         FontAttributes="Bold"
+         TextColor="White"
+         FontFamily="BACKCOUNTRY"
+         TextTransform="Uppercase"
+         Margin="50,0,0,30"/>
+
+        <Grid ColumnDefinitions="*,*">
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle
+         Margin="-5,-30,-5,-2"
+         CornerRadius="30,30,0,0"
+         Fill="#dfdaca"
+         Opacity="0.9"/>
+
+            <Image
+         Source="fondo.png"
+         Aspect="AspectFill"
+         Margin="-5,-30,-5,-2"
+         Opacity="0.3"/>
+
+            <ScrollView>
+                <VerticalStackLayout Padding="20" Spacing="20">
+
+                   <!-- Campos de texto -->
+                    <Entry Placeholder="Nombre"
                    Text="{Binding Nombre}"
+                           PlaceholderColor="Black"
+                           Background="AntiqueWhite"
                     />
-            <Entry Placeholder="Apellido paterno"
+                    <Entry Placeholder="Apellido paterno"
                    Text="{Binding ApellidoPaterno}"
+                           PlaceholderColor="Black"
+                           BackgroundColor="AntiqueWhite"
                     />
-            <Entry Placeholder="Apellido materno"
+                    <Entry Placeholder="Apellido materno"
                    Text="{Binding ApellidoMaterno}"
+                           PlaceholderColor="Black"
+                            BackgroundColor="AntiqueWhite"
                     />
-            <DatePicker Date="{Binding FechaNacimiento}"
-            MaximumDate="{Binding FechaMaxima}" />
+                    <DatePicker Date="{Binding FechaNacimiento}"
+                                MaximumDate="{Binding FechaMaxima}" 
+                                BackgroundColor="AntiqueWhite"/>
 
 
-            <Entry Placeholder="Correo electrónico"
-                   Text="{Binding Email}"
-                   Keyboard="Email"
+                    <Entry Placeholder="Correo electrónico"
+                           Text="{Binding Email}"
+                           Keyboard="Email"
+                           PlaceholderColor="Black"
+                           BackgroundColor="AntiqueWhite"
                     />
-            <Entry Placeholder="Usuario"
-                   Text="{Binding Username}"
+                    <Entry Placeholder="Usuario"
+                           Text="{Binding Username}"
+                           PlaceholderColor="Black"
+                           BackgroundColor="AntiqueWhite"
                     />
-            <Entry Placeholder="Contraseña"
-                   Text="{Binding Password}"
-                   IsPassword="True"
+                    <Entry Placeholder="Contraseña"
+                           Text="{Binding Password}"
+                           IsPassword="True"
+                           PlaceholderColor="Black"
+                            BackgroundColor="AntiqueWhite"
                     />
-            <Entry Placeholder="Confirmar contraseña"
-                   Text="{Binding ConfirmPassword}"
-                   IsPassword="True"
+                    <Entry Placeholder="Confirmar contraseña"
+                           Text="{Binding ConfirmPassword}"
+                           IsPassword="True"
+                           PlaceholderColor="Black"
+                            BackgroundColor="AntiqueWhite"
                     />
 
-            <!-- Botón de registro -->
-            <Button Text="Registrarse"
+                    <!-- Botón de registro -->
+                    <Button Text="Registrarse"
                     Command="{Binding RegisterCommand}"
-                    BackgroundColor="#2563EB"
+                    BackgroundColor="#005f73"
                     TextColor="White"
                     FontSize="18"
                     CornerRadius="12"
-                    HeightRequest="50" />
+                    HeightRequest="50" 
+                            FontFamily="BACKCOUNTRY"
+                            FontAttributes="Bold"/>
 
-            <!-- Volver al login -->
-            <Button Text="Volver al inicio de sesión"
+                    <!-- Volver al login -->
+                    <Button Text="Volver al inicio de sesión"
                     Command="{Binding GoToLoginCommand}"
                     BackgroundColor="Transparent"
-                    TextColor="#2563EB"
-                    FontAttributes="Bold" />
+                    TextColor="#005f73"
+                    FontAttributes="Bold"
+                            FontFamily="BACKCOUNTRY"/>
 
-        </VerticalStackLayout>
-    </ScrollView>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Grid>
 </ContentPage>

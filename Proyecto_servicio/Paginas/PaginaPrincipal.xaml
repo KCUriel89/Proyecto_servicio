@@ -2,38 +2,63 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto_servicio.Paginas.PaginaPrincipal"
-             Title="PaginaPrincipal">
+             Title=""
+             BackgroundColor="#dfdaca">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!-- Menu Button -->
-        <HorizontalStackLayout Grid.Row="0" Padding="10,10,0,0">
-            <Button x:Name="MenuButton"
+
+        <Grid RowDefinitions="*,*">  
+
+            
+            
+            <!-- Menu Button -->
+                <HorizontalStackLayout Grid.Row="0" Padding="10,10,0,0">
+                    <Button x:Name="MenuButton"
                     Text="☰"
-                    FontSize="24"
+                    FontAttributes="Bold"
+                    FontSize="26"
                     Clicked="OnMenuButtonClicked"
-                    HorizontalOptions="Start"/>
-        </HorizontalStackLayout>
-        <!-- Popup Menu -->
-        <StackLayout x:Name="MenuOptions"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    BackgroundColor="#154369"
+                    HeightRequest="50"
+                    WidthRequest="50"/>
+                    <Image
+                        Source="empresa2.png"
+                        HeightRequest="600"
+                        Margin="0,50,0,0"
+                        Opacity="0.4"
+                       >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                            x:Name="imagen"
+                            Tapped="Imagen_Tapped"
+                            NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+
+            </HorizontalStackLayout>
+                <!-- Popup Menu -->
+                <StackLayout x:Name="MenuOptions"
                      IsVisible="False"
-                     BackgroundColor="#EEEEEE"
-                     Padding="10"
-                     VerticalOptions="Start"
+                     BackgroundColor="Transparent"
+                     Margin="70,10,0,0"
+                     Spacing="1"
                      HorizontalOptions="Start"
-                     Margin="10,50,0,0"
-                     ZIndex="1"
-                     WidthRequest="200">
-            <Button Text="Tramita tu INE" Clicked="OnPagina1Clicked"/>
-            <Button Text="Registro Compraventa" Clicked="OnPagina2Clicked"/>
-            <Button Text="Testamentos" Clicked="OnPagina3Clicked"/>
-            <Button Text="Cerrar sesión" Clicked="OnCerrarSesionClicked" BackgroundColor="#FF6666" TextColor="White"/>
-        </StackLayout>
-        <!-- Main Content -->
-        <StackLayout Grid.Row="1" Padding="20">
-            <Label Text="Bienvenido a la página principal" FontSize="20"/>
-        </StackLayout>
+                     VerticalOptions="Start"                    
+                     WidthRequest="240"
+                     HeightRequest="200">
+                    <Button Text="Tramita tu INE" Clicked="OnPagina1Clicked" Margin="3" BackgroundColor="#154369" FontAttributes="Bold" FontFamily="BACKCOUNTRY" FontSize="19" CornerRadius="23"/>
+                    <Button Text="Registro Compraventa" Clicked="OnPagina2Clicked" Margin="3" BackgroundColor="#154369" FontAttributes="Bold" FontFamily="BACKCOUNTRY" FontSize="19" CornerRadius="23"/>
+                    <Button Text="Testamentos" Clicked="OnPagina3Clicked" Margin="3" BackgroundColor="#154369" FontAttributes="Bold" FontFamily="BACKCOUNTRY" CornerRadius="23" FontSize="19"/>
+                    <Button Text="Cerrar sesión" Clicked="OnCerrarSesionClicked" BackgroundColor="#FF6666" TextColor="White" Margin="3" FontAttributes="Bold" FontFamily="BACKCOUNTRY" CornerRadius="23" FontSize="19"/>
+                </StackLayout>           
+
+            
+        </Grid>
     </Grid>
 </ContentPage>   

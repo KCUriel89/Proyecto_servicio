@@ -122,6 +122,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\calendario.jpg" />
+	  <MauiImage Remove="Resources\Images\header.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\calendario.jpg" />
+	  <None Remove="Resources\Images\header.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.120" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.10" />
@@ -137,6 +147,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Paginas\AdminPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Paginas\InformacionEmpresa.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Paginas\LoginPage.xaml">

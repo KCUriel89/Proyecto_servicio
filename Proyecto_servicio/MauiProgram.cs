@@ -15,6 +15,7 @@ namespace Proyecto_servicio
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("BACKCOUNTRY-Regular.ttf", "BACKCOUNTRY");
                 });
 
             return builder.Build();

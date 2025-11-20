@@ -47,4 +47,9 @@ public partial class PaginaPrincipal : ContentPage
         await Navigation.PopToRootAsync();
 
     }
+
+    private async void Imagen_Tapped(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new InformacionEmpresa());
+    }
 }
