@@ -122,6 +122,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Models\**" />
+	  <Compile Remove="Models\**" />
+	  <EmbeddedResource Remove="Models\**" />
+	  <MauiCss Remove="Models\**" />
+	  <MauiXaml Remove="Models\**" />
+	  <None Remove="Models\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiImage Remove="Resources\Images\calendario.jpg" />
 	  <MauiImage Remove="Resources\Images\header.jpg" />
 	</ItemGroup>
@@ -133,6 +142,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.3" />
+		<PackageReference Include="Microsoft.Data.SqlClient.SNI.runtime" Version="6.0.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.120" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.10" />
 		<PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.120" />
@@ -146,7 +157,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Paginas\AdminPage.xaml">
+	  <MauiXaml Update="Paginas\Admin\AdminPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Paginas\InformacionEmpresa.xaml">
@@ -170,6 +181,11 @@
 	  <MauiXaml Update="Paginas\PaginaPrincipal.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Paginas\Cliente\" />
+	  <Folder Include="Paginas\Trabajador\" />
 	</ItemGroup>
 
 </Project>

@@ -59,7 +59,7 @@
                        FontFamily="BACKCOUNTRY"
                        TextTransform="Uppercase"/>
                 <Entry Placeholder="Usuario"
-                   Text="{Binding Username}"
+                   x:Name="entryUsuario"
                    FontSize="16"
                    ClearButtonVisibility="WhileEditing"
                    BackgroundColor="White"
@@ -70,8 +70,8 @@
 
                 <Entry 
             Placeholder="Contraseña"
-            x:Name="PasswordEntry"
-            Text="{Binding Password}"
+            x:Name="entryPassword"
+            
             IsPassword="True"
             FontSize="16"
             BackgroundColor="White"
@@ -79,7 +79,7 @@
             HeightRequest="45" />
 
                 <Button Text="Iniciar sesión"
-                        Command="{Binding LoginCommand}"
+                        Clicked="OnLoginClicked"
                         BackgroundColor="#154369"
                         TextColor="White"
                         FontSize="18"
@@ -89,7 +89,7 @@
                         FontAttributes="Bold"/>
 
                 <Button Text="Registrarse"
-             Command="{Binding GoToRegisterCommand}"
+             Clicked="OnRegisterClicked"
              BackgroundColor="#005f73"
              TextColor="White"
              FontSize="18"

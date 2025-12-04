@@ -44,44 +44,54 @@
 
                    <!-- Campos de texto -->
                     <Entry Placeholder="Nombre"
-                   Text="{Binding Nombre}"
+                           x:Name="entryNombre"
                            PlaceholderColor="Black"
                            Background="AntiqueWhite"
                     />
                     <Entry Placeholder="Apellido paterno"
-                   Text="{Binding ApellidoPaterno}"
+                           x:Name="entryApP"
                            PlaceholderColor="Black"
                            BackgroundColor="AntiqueWhite"
                     />
                     <Entry Placeholder="Apellido materno"
-                   Text="{Binding ApellidoMaterno}"
+                           x:Name="entryApM"
                            PlaceholderColor="Black"
-                            BackgroundColor="AntiqueWhite"
+                           BackgroundColor="AntiqueWhite"
                     />
-                    <DatePicker Date="{Binding FechaNacimiento}"
-                                MaximumDate="{Binding FechaMaxima}" 
-                                BackgroundColor="AntiqueWhite"/>
+                    <Label Text="Fecha de nacimiento"
+                           FontSize="16"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           />
+                    <DatePicker x:Name="pickerFechaNacimiento"
+                               
+                              
+                               BackgroundColor="AntiqueWhite"/>
 
 
                     <Entry Placeholder="Correo electrónico"
-                           Text="{Binding Email}"
+                           x:Name="entryEmail"
                            Keyboard="Email"
                            PlaceholderColor="Black"
                            BackgroundColor="AntiqueWhite"
                     />
-                    <Entry Placeholder="Usuario"
-                           Text="{Binding Username}"
+                    <Entry x:Name="entryTelefono"
+                            Placeholder="Teléfono" 
+                            Keyboard="Telephone"
+                            PlaceholderColor="Black"
+                            BackgroundColor="AntiqueWhite"/>
+                    <Entry x:Name="entryDireccion"
+                           Placeholder="Dirección" 
                            PlaceholderColor="Black"
-                           BackgroundColor="AntiqueWhite"
-                    />
+                           BackgroundColor="AntiqueWhite"/> 
                     <Entry Placeholder="Contraseña"
-                           Text="{Binding Password}"
+                           x:Name="entryPassword"
                            IsPassword="True"
                            PlaceholderColor="Black"
                             BackgroundColor="AntiqueWhite"
                     />
                     <Entry Placeholder="Confirmar contraseña"
-                           Text="{Binding ConfirmPassword}"
+                           x:Name="entryConfirm"
                            IsPassword="True"
                            PlaceholderColor="Black"
                             BackgroundColor="AntiqueWhite"
@@ -89,7 +99,7 @@
 
                     <!-- Botón de registro -->
                     <Button Text="Registrarse"
-                    Command="{Binding RegisterCommand}"
+                    Clicked="OnRegisterClicked"
                     BackgroundColor="#005f73"
                     TextColor="White"
                     FontSize="18"
@@ -100,7 +110,7 @@
 
                     <!-- Volver al login -->
                     <Button Text="Volver al inicio de sesión"
-                    Command="{Binding GoToLoginCommand}"
+                    Clicked="OnGoLoginClicked"
                     BackgroundColor="Transparent"
                     TextColor="#005f73"
                     FontAttributes="Bold"

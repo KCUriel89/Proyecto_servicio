@@ -26,9 +26,9 @@
                   Margin="10,50,0,0"
                   ZIndex="1"
                   WidthRequest="200">
-            <Button Text="Tramita tu INE" Clicked="OnPagina3Clicked"/>
+            <Button Text="Tramita tu INE" Clicked="OnPagina1Clicked"/>
             <Button Text="Registro Compraventa" Clicked="OnPagina2Clicked"/>
-            <Button Text="Inicio" Clicked="OnPagina1Clicked"/>
+            <Button Text="Inicio" Clicked="OnPagina3Clicked"/>
             <Button Text="Cerrar sesión" Clicked="OnCerrarSesionClicked" BackgroundColor="#FF6666" TextColor="White"/>
         </StackLayout>
         <!-- Main Content -->
